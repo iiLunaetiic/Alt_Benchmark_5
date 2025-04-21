@@ -1,6 +1,6 @@
 package QuestionOne;
 
-/*
+
 
 import QuestionOne.Factories.IShapeFactory;
 import QuestionOne.Factories.EquTriangleFactory;
@@ -33,5 +33,4 @@ public class Q1Driver {
     }
 }
 
-*/
 

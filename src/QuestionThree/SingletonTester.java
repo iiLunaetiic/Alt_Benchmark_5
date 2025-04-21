@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class SingletonTester
 {
-    /*
+
 
     @Test(timeout=200)
     public void test_Only_One_Instance_Possible()
@@ -46,6 +46,5 @@ public class SingletonTester
         }
     }
 
-    */
 
 }

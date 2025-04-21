@@ -19,7 +19,8 @@ public class Student
      * @post observers = new LinkedList AND age = "0"
      */
     public Student() {
-
+        observers = new LinkedList<>();
+        attendanceRecord = 0;
     }
 
     /**
@@ -31,7 +32,8 @@ public class Student
      * @post attendanceRecord = attendanceRecord + 1 AND notifies all observers to invoke their notifyClassAttendance method
      */
     public void goToClass() {
-
+        attendanceRecord++;
+        notifyAllObservers();
     }
 
     /**
@@ -42,7 +44,7 @@ public class Student
      * @post observers = observers now includes the interested observer given by anObs AND age = #age
      */
     public void addObserver(AbsObserver anObs) {
-
+        observers.add(anObs);
     }
 
     /**
@@ -53,7 +55,7 @@ public class Student
      * @post observers = observers now excludes the observer given by anObs AND age = #age
      */
     public void removeObserver(AbsObserver anObs) {
-
+        observers.remove(anObs);
     }
 
     /**
@@ -64,7 +66,7 @@ public class Student
      * @post getAge = attendanceRecord AND observers = #observers AND attendanceRecord = #attendanceRecord
      */
     public int getAttendanceRecord() {
-        return -1; //note, this is just here to help you compile. You need to implement this method
+        return attendanceRecord; //note, this is just here to help you compile. You need to implement this method
     }
 
     /**
@@ -75,7 +77,9 @@ public class Student
      * @post invokes all interested observers' notifyClassAttendance method AND attendanceRecord = #attendanceRecord
      */
     public void notifyAllObservers() {
-
+        for (AbsObserver observer : observers) {
+            observer.notifyClassAttendance();
+        }
     }
 
 }
